@@ -1,0 +1,28 @@
+{
+    "name": "CurraCart",
+    "version": "0.1",
+    "description": "Finding the best coupon for your shopping site",
+    "author": "Dalia & Ashraf",
+    "permissions": [
+        "activeTab",
+        "https://www.shein.co.uk/checkout",
+        "tabs"
+    ],
+    "background": {
+        "page": "background.html",
+        "persistant": false
+    },
+    "content_scripts": [{
+        "matches": ["https://www.shein.co.uk/checkout"],
+        "js": ["app.js"],
+        "css": ["coupon.css"],
+        "run_at": "document_end"
+    }],
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "manifest_version": 2,
+    "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'"
+}
